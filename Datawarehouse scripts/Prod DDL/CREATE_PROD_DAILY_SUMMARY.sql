@@ -1,4 +1,4 @@
-CREATE TABLE FITNESS_DATA.STG_DAILYACTIVITY_MERGED 
+CREATE TABLE FITNESS_DATA.PROD_DAILY_SUMMARY 
     ( 
      ID                                   NUMBER , 
      ACTIVITY_DATE                        DATE , 
@@ -14,7 +14,14 @@ CREATE TABLE FITNESS_DATA.STG_DAILYACTIVITY_MERGED
      FAIRLYACTIVE_MINUTES                 NUMBER , 
      LIGHTLYACTIVE_MINUTES                NUMBER , 
      SEDENTARY_MINUTES                    NUMBER , 
-     CALORIES_BURNED                      NUMBER 
+     CALORIES_BURNED                      NUMBER ,
+     TOTAL_SLEEP_RECORDS                  NUMBER , 
+     TOTAL_MINUTES_ASLEEP                 NUMBER , 
+     TOTAL_TIME_IN_BED                    NUMBER ,
+     WEIGHT_KG                            NUMBER , 
+     WEIGHT_POUNDS                        NUMBER , 
+     FAT_PERCENTAGE                       NUMBER , 
+     BMI                                  NUMBER 
     ) 
     TABLESPACE DATA 
     LOGGING 

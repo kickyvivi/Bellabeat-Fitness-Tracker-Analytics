@@ -1,0 +1,14 @@
+CREATE TABLE FITNESS_DATA.PROD_MINUTE_SUMMARY 
+    ( 
+     ID              NUMBER , 
+     ACTIVITY_MINUTE TIMESTAMP , 
+     CALORIES_BURNED NUMBER ,
+     INTENSITY       NUMBER ,
+     METS            NUMBER ,
+     SLEEP_STATE      NUMBER ,
+     STEPS           NUMBER ,
+
+    ) 
+    TABLESPACE DATA 
+    LOGGING 
+;
