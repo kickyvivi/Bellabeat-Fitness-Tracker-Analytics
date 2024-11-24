@@ -1,0 +1,14 @@
+CREATE TABLE FITNESS_DATA.STG_WEIGHTLOGINFO_MERGED
+    ( 
+     ID             NUMBER , 
+     MEASUREMENT_DATE         TIMESTAMP , 
+     WEIGHT_KG       NUMBER , 
+     WEIGHT_POUNDS   NUMBER , 
+     FAT_PERCENTAGE            NUMBER , 
+     BMI            NUMBER , 
+     IS_MANUALREPORT BOOLEAN , 
+     LOGID          NUMBER 
+    ) 
+    TABLESPACE DATA 
+    LOGGING 
+;

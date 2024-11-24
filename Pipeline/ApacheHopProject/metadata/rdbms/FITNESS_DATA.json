@@ -1,0 +1,26 @@
+{
+  "rdbms": {
+    "ORACLE": {
+      "databaseName": "",
+      "pluginId": "ORACLE",
+      "accessType": 0,
+      "hostname": "",
+      "password": "Encrypted 2fef3c6ab01de848dbd10a973cec3fdfb",
+      "pluginName": "Oracle",
+      "port": "1521",
+      "attributes": {
+        "SUPPORTS_TIMESTAMP_DATA_TYPE": "Y",
+        "QUOTE_ALL_FIELDS": "N",
+        "SUPPORTS_BOOLEAN_DATA_TYPE": "Y",
+        "FORCE_IDENTIFIERS_TO_LOWERCASE": "N",
+        "PRESERVE_RESERVED_WORD_CASE": "Y",
+        "SQL_CONNECT": "",
+        "FORCE_IDENTIFIERS_TO_UPPERCASE": "N",
+        "PREFERRED_SCHEMA_NAME": ""
+      },
+      "manualUrl": "jdbc:oracle:thin:@(description\u003d (retry_count\u003d20)(retry_delay\u003d3)(address\u003d(protocol\u003dtcps)(port\u003d1522)(host\u003dadb.us-ashburn-1.oraclecloud.com))(connect_data\u003d(service_name\u003dg6e85a03f628769_utaxw967zpwnrynv_high.adb.oraclecloud.com))(security\u003d(my_wallet_directory\u003dC:\\Wallet)))",
+      "username": "FITNESS_DATA"
+    }
+  },
+  "name": "FITNESS_DATA"
+}
