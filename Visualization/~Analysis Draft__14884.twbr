@@ -1,0 +1,3228 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20242.24.0910.0334                               -->
+<workbook original-version='18.1' source-build='2024.2.3 (20242.24.0910.0334)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <SavingAnalyticObjects />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <style>
+    <style-rule element='dash-title'>
+      <format attr='font-family' value='Lucida Calligraphy' />
+    </style-rule>
+    <style-rule element='all'>
+      <format attr='font-family' value='Leelawadee UI' />
+    </style-rule>
+  </style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Minimum Required Sleep for Adults in Minutes' datatype='real' default-format='n#,##0&quot; Minutes&quot;;-#,##0&quot; Minutes&quot;' name='[Parameter 1]' param-domain-type='any' role='measure' type='quantitative' value='420.'>
+        <calculation class='tableau' formula='420.' />
+      </column>
+      <column caption='Minimum Required Sleep for Adults in Hours' datatype='real' default-format='n#,##0.0&quot; Hours&quot;;-#,##0.0&quot; Hours&quot;' name='[Parameter 2]' param-domain-type='any' role='measure' type='quantitative' value='7.'>
+        <calculation class='tableau' formula='7.' />
+      </column>
+    </datasource>
+    <datasource caption='PROD_ID+ (FITNESS_DATA)' inline='true' name='federated.0kuluxs0kd0fg010km8a112b4c5y' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='utaxw967zpwnrynv_high' name='oracle.004w3yz03dfowz175mh7v03ugm63'>
+            <connection authentication='RDBMS' class='oracle' one-time-sql='' port='' schema='FITNESS_DATA' server='utaxw967zpwnrynv_high' service='' sslcert='' sslmode='' username='FITNESS_DATA' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='oracle.004w3yz03dfowz175mh7v03ugm63' name='PROD_DAILY_SUMMARY' table='[FITNESS_DATA].[PROD_DAILY_SUMMARY]' type='table' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='oracle.004w3yz03dfowz175mh7v03ugm63' name='PROD_ID' table='[FITNESS_DATA].[PROD_ID]' type='table' />
+          <relation connection='oracle.004w3yz03dfowz175mh7v03ugm63' name='PROD_DAILY_SUMMARY' table='[FITNESS_DATA].[PROD_DAILY_SUMMARY]' type='table' />
+          <relation connection='oracle.004w3yz03dfowz175mh7v03ugm63' name='PROD_HEARTRATE_SECONDS' table='[FITNESS_DATA].[PROD_HEARTRATE_SECONDS]' type='table' />
+          <relation connection='oracle.004w3yz03dfowz175mh7v03ugm63' name='PROD_HOURLY_SUMMARY' table='[FITNESS_DATA].[PROD_HOURLY_SUMMARY]' type='table' />
+          <relation connection='oracle.004w3yz03dfowz175mh7v03ugm63' name='PROD_MINUTE_SUMMARY' table='[FITNESS_DATA].[PROD_MINUTE_SUMMARY]' type='table' />
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[ACTIVITY_DATE]' value='[PROD_DAILY_SUMMARY].[ACTIVITY_DATE]' />
+          <map key='[ACTIVITY_HOUR]' value='[PROD_HOURLY_SUMMARY].[ACTIVITY_HOUR]' />
+          <map key='[ACTIVITY_MINUTE]' value='[PROD_MINUTE_SUMMARY].[ACTIVITY_MINUTE]' />
+          <map key='[AVERAGE_INTENSITY]' value='[PROD_HOURLY_SUMMARY].[AVERAGE_INTENSITY]' />
+          <map key='[BMI]' value='[PROD_DAILY_SUMMARY].[BMI]' />
+          <map key='[CALORIES_BURNED (PROD_HOURLY_SUMMARY)]' value='[PROD_HOURLY_SUMMARY].[CALORIES_BURNED]' />
+          <map key='[CALORIES_BURNED (PROD_MINUTE_SUMMARY)]' value='[PROD_MINUTE_SUMMARY].[CALORIES_BURNED]' />
+          <map key='[CALORIES_BURNED]' value='[PROD_DAILY_SUMMARY].[CALORIES_BURNED]' />
+          <map key='[DATEKEY (PROD_HEARTRATE_SECONDS)]' value='[PROD_HEARTRATE_SECONDS].[DATEKEY]' />
+          <map key='[DATEKEY (PROD_HOURLY_SUMMARY)]' value='[PROD_HOURLY_SUMMARY].[DATEKEY]' />
+          <map key='[DATEKEY (PROD_MINUTE_SUMMARY)]' value='[PROD_MINUTE_SUMMARY].[DATEKEY]' />
+          <map key='[DATEKEY]' value='[PROD_DAILY_SUMMARY].[DATEKEY]' />
+          <map key='[FAIRLYACTIVE_MINUTES]' value='[PROD_DAILY_SUMMARY].[FAIRLYACTIVE_MINUTES]' />
+          <map key='[FAT_PERCENTAGE]' value='[PROD_DAILY_SUMMARY].[FAT_PERCENTAGE]' />
+          <map key='[HEARTRATE]' value='[PROD_HEARTRATE_SECONDS].[HEARTRATE]' />
+          <map key='[ID (PROD_DAILY_SUMMARY)]' value='[PROD_DAILY_SUMMARY].[ID]' />
+          <map key='[ID (PROD_HEARTRATE_SECONDS)]' value='[PROD_HEARTRATE_SECONDS].[ID]' />
+          <map key='[ID (PROD_HOURLY_SUMMARY)]' value='[PROD_HOURLY_SUMMARY].[ID]' />
+          <map key='[ID (PROD_MINUTE_SUMMARY)]' value='[PROD_MINUTE_SUMMARY].[ID]' />
+          <map key='[ID]' value='[PROD_ID].[ID]' />
+          <map key='[INTENSITY]' value='[PROD_MINUTE_SUMMARY].[INTENSITY]' />
+          <map key='[LIGHTACTIVE_DISTANCE_KILOMETER]' value='[PROD_DAILY_SUMMARY].[LIGHTACTIVE_DISTANCE_KILOMETER]' />
+          <map key='[LIGHTLYACTIVE_MINUTES]' value='[PROD_DAILY_SUMMARY].[LIGHTLYACTIVE_MINUTES]' />
+          <map key='[LOGGED_ACTIVITIES_DISTANCE_KILOMETER]' value='[PROD_DAILY_SUMMARY].[LOGGED_ACTIVITIES_DISTANCE_KILOMETER]' />
+          <map key='[MEASUREMENT_TIME]' value='[PROD_HEARTRATE_SECONDS].[MEASUREMENT_TIME]' />
+          <map key='[METS]' value='[PROD_MINUTE_SUMMARY].[METS]' />
+          <map key='[MODERATELYACTIVE_DISTANCE_KILOMETER]' value='[PROD_DAILY_SUMMARY].[MODERATELYACTIVE_DISTANCE_KILOMETER]' />
+          <map key='[SEDENTARYACTIVE_DISTANCE_KILOMETER]' value='[PROD_DAILY_SUMMARY].[SEDENTARYACTIVE_DISTANCE_KILOMETER]' />
+          <map key='[SEDENTARY_MINUTES]' value='[PROD_DAILY_SUMMARY].[SEDENTARY_MINUTES]' />
+          <map key='[SLEEP_STATE]' value='[PROD_MINUTE_SUMMARY].[SLEEP_STATE]' />
+          <map key='[STEPS]' value='[PROD_MINUTE_SUMMARY].[STEPS]' />
+          <map key='[STEP_TOTAL]' value='[PROD_HOURLY_SUMMARY].[STEP_TOTAL]' />
+          <map key='[TOTAL_DISTANCE_KILOMETER]' value='[PROD_DAILY_SUMMARY].[TOTAL_DISTANCE_KILOMETER]' />
+          <map key='[TOTAL_INTENSITY]' value='[PROD_HOURLY_SUMMARY].[TOTAL_INTENSITY]' />
+          <map key='[TOTAL_MINUTES_ASLEEP]' value='[PROD_DAILY_SUMMARY].[TOTAL_MINUTES_ASLEEP]' />
+          <map key='[TOTAL_SLEEP_RECORDS]' value='[PROD_DAILY_SUMMARY].[TOTAL_SLEEP_RECORDS]' />
+          <map key='[TOTAL_STEPS]' value='[PROD_DAILY_SUMMARY].[TOTAL_STEPS]' />
+          <map key='[TOTAL_TIME_IN_BED]' value='[PROD_DAILY_SUMMARY].[TOTAL_TIME_IN_BED]' />
+          <map key='[TRACKER_DISTANCE_KILOMETER]' value='[PROD_DAILY_SUMMARY].[TRACKER_DISTANCE_KILOMETER]' />
+          <map key='[VERYACTIVE_DISTANCE_KILOMETER]' value='[PROD_DAILY_SUMMARY].[VERYACTIVE_DISTANCE_KILOMETER]' />
+          <map key='[VERYACTIVE_MINUTES]' value='[PROD_DAILY_SUMMARY].[VERYACTIVE_MINUTES]' />
+          <map key='[WEIGHT_KG]' value='[PROD_DAILY_SUMMARY].[WEIGHT_KG]' />
+          <map key='[WEIGHT_POUNDS]' value='[PROD_DAILY_SUMMARY].[WEIGHT_POUNDS]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[ID]</local-name>
+            <parent-name>[PROD_ID]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_ID_3547B4DC801441E6929ABC687B341792]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[ID (PROD_DAILY_SUMMARY)]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ACTIVITY_DATE</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[ACTIVITY_DATE]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>ACTIVITY_DATE</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TOTAL_STEPS</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[TOTAL_STEPS]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>TOTAL_STEPS</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TOTAL_DISTANCE_KILOMETER</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[TOTAL_DISTANCE_KILOMETER]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>TOTAL_DISTANCE_KILOMETER</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TRACKER_DISTANCE_KILOMETER</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[TRACKER_DISTANCE_KILOMETER]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>TRACKER_DISTANCE_KILOMETER</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LOGGED_ACTIVITIES_DISTANCE_KILOMETER</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[LOGGED_ACTIVITIES_DISTANCE_KILOMETER]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>LOGGED_ACTIVITIES_DISTANCE_KILOMETER</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>VERYACTIVE_DISTANCE_KILOMETER</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[VERYACTIVE_DISTANCE_KILOMETER]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>VERYACTIVE_DISTANCE_KILOMETER</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MODERATELYACTIVE_DISTANCE_KILOMETER</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[MODERATELYACTIVE_DISTANCE_KILOMETER]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>MODERATELYACTIVE_DISTANCE_KILOMETER</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LIGHTACTIVE_DISTANCE_KILOMETER</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[LIGHTACTIVE_DISTANCE_KILOMETER]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>LIGHTACTIVE_DISTANCE_KILOMETER</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SEDENTARYACTIVE_DISTANCE_KILOMETER</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[SEDENTARYACTIVE_DISTANCE_KILOMETER]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>SEDENTARYACTIVE_DISTANCE_KILOMETER</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>VERYACTIVE_MINUTES</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[VERYACTIVE_MINUTES]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>VERYACTIVE_MINUTES</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FAIRLYACTIVE_MINUTES</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[FAIRLYACTIVE_MINUTES]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>FAIRLYACTIVE_MINUTES</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LIGHTLYACTIVE_MINUTES</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[LIGHTLYACTIVE_MINUTES]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>LIGHTLYACTIVE_MINUTES</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SEDENTARY_MINUTES</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[SEDENTARY_MINUTES]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>SEDENTARY_MINUTES</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CALORIES_BURNED</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[CALORIES_BURNED]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>CALORIES_BURNED</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TOTAL_SLEEP_RECORDS</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[TOTAL_SLEEP_RECORDS]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>TOTAL_SLEEP_RECORDS</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TOTAL_MINUTES_ASLEEP</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[TOTAL_MINUTES_ASLEEP]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>TOTAL_MINUTES_ASLEEP</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TOTAL_TIME_IN_BED</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[TOTAL_TIME_IN_BED]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>TOTAL_TIME_IN_BED</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WEIGHT_KG</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[WEIGHT_KG]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>WEIGHT_KG</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WEIGHT_POUNDS</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[WEIGHT_POUNDS]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>WEIGHT_POUNDS</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FAT_PERCENTAGE</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[FAT_PERCENTAGE]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>FAT_PERCENTAGE</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BMI</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[BMI]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>BMI</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DATEKEY</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[DATEKEY]</local-name>
+            <parent-name>[PROD_DAILY_SUMMARY]</parent-name>
+            <remote-alias>DATEKEY</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>8</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[ID (PROD_HEARTRATE_SECONDS)]</local-name>
+            <parent-name>[PROD_HEARTRATE_SECONDS]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_HEARTRATE_SECONDS_871DF680476D481B8BA6963A2BE5668E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MEASUREMENT_TIME</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[MEASUREMENT_TIME]</local-name>
+            <parent-name>[PROD_HEARTRATE_SECONDS]</parent-name>
+            <remote-alias>MEASUREMENT_TIME</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_HEARTRATE_SECONDS_871DF680476D481B8BA6963A2BE5668E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HEARTRATE</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[HEARTRATE]</local-name>
+            <parent-name>[PROD_HEARTRATE_SECONDS]</parent-name>
+            <remote-alias>HEARTRATE</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_HEARTRATE_SECONDS_871DF680476D481B8BA6963A2BE5668E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DATEKEY</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[DATEKEY (PROD_HEARTRATE_SECONDS)]</local-name>
+            <parent-name>[PROD_HEARTRATE_SECONDS]</parent-name>
+            <remote-alias>DATEKEY</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>8</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_HEARTRATE_SECONDS_871DF680476D481B8BA6963A2BE5668E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[ID (PROD_HOURLY_SUMMARY)]</local-name>
+            <parent-name>[PROD_HOURLY_SUMMARY]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_HOURLY_SUMMARY_179053B0679D494C8BB553DF31E6ADE8]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ACTIVITY_HOUR</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[ACTIVITY_HOUR]</local-name>
+            <parent-name>[PROD_HOURLY_SUMMARY]</parent-name>
+            <remote-alias>ACTIVITY_HOUR</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_HOURLY_SUMMARY_179053B0679D494C8BB553DF31E6ADE8]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CALORIES_BURNED</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[CALORIES_BURNED (PROD_HOURLY_SUMMARY)]</local-name>
+            <parent-name>[PROD_HOURLY_SUMMARY]</parent-name>
+            <remote-alias>CALORIES_BURNED</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_HOURLY_SUMMARY_179053B0679D494C8BB553DF31E6ADE8]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TOTAL_INTENSITY</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[TOTAL_INTENSITY]</local-name>
+            <parent-name>[PROD_HOURLY_SUMMARY]</parent-name>
+            <remote-alias>TOTAL_INTENSITY</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_HOURLY_SUMMARY_179053B0679D494C8BB553DF31E6ADE8]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AVERAGE_INTENSITY</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[AVERAGE_INTENSITY]</local-name>
+            <parent-name>[PROD_HOURLY_SUMMARY]</parent-name>
+            <remote-alias>AVERAGE_INTENSITY</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_HOURLY_SUMMARY_179053B0679D494C8BB553DF31E6ADE8]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>STEP_TOTAL</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[STEP_TOTAL]</local-name>
+            <parent-name>[PROD_HOURLY_SUMMARY]</parent-name>
+            <remote-alias>STEP_TOTAL</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_HOURLY_SUMMARY_179053B0679D494C8BB553DF31E6ADE8]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DATEKEY</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[DATEKEY (PROD_HOURLY_SUMMARY)]</local-name>
+            <parent-name>[PROD_HOURLY_SUMMARY]</parent-name>
+            <remote-alias>DATEKEY</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>8</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_HOURLY_SUMMARY_179053B0679D494C8BB553DF31E6ADE8]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[ID (PROD_MINUTE_SUMMARY)]</local-name>
+            <parent-name>[PROD_MINUTE_SUMMARY]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_MINUTE_SUMMARY_3F4BE9168AA845F4A3C1CB73C0755C69]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ACTIVITY_MINUTE</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[ACTIVITY_MINUTE]</local-name>
+            <parent-name>[PROD_MINUTE_SUMMARY]</parent-name>
+            <remote-alias>ACTIVITY_MINUTE</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_MINUTE_SUMMARY_3F4BE9168AA845F4A3C1CB73C0755C69]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CALORIES_BURNED</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[CALORIES_BURNED (PROD_MINUTE_SUMMARY)]</local-name>
+            <parent-name>[PROD_MINUTE_SUMMARY]</parent-name>
+            <remote-alias>CALORIES_BURNED</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_MINUTE_SUMMARY_3F4BE9168AA845F4A3C1CB73C0755C69]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INTENSITY</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[INTENSITY]</local-name>
+            <parent-name>[PROD_MINUTE_SUMMARY]</parent-name>
+            <remote-alias>INTENSITY</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_MINUTE_SUMMARY_3F4BE9168AA845F4A3C1CB73C0755C69]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>METS</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[METS]</local-name>
+            <parent-name>[PROD_MINUTE_SUMMARY]</parent-name>
+            <remote-alias>METS</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_MINUTE_SUMMARY_3F4BE9168AA845F4A3C1CB73C0755C69]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SLEEP_STATE</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[SLEEP_STATE]</local-name>
+            <parent-name>[PROD_MINUTE_SUMMARY]</parent-name>
+            <remote-alias>SLEEP_STATE</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_MINUTE_SUMMARY_3F4BE9168AA845F4A3C1CB73C0755C69]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>STEPS</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[STEPS]</local-name>
+            <parent-name>[PROD_MINUTE_SUMMARY]</parent-name>
+            <remote-alias>STEPS</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <scale>-127</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_MINUTE_SUMMARY_3F4BE9168AA845F4A3C1CB73C0755C69]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DATEKEY</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[DATEKEY (PROD_MINUTE_SUMMARY)]</local-name>
+            <parent-name>[PROD_MINUTE_SUMMARY]</parent-name>
+            <remote-alias>DATEKEY</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>8</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[PROD_MINUTE_SUMMARY_3F4BE9168AA845F4A3C1CB73C0755C69]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:FAIRLYACTIVE_MINUTES:qk]&quot;' value='Fairlyactive' />
+          <alias key='&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:LIGHTLYACTIVE_MINUTES:qk]&quot;' value='Lightlyactive' />
+          <alias key='&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:VERYACTIVE_MINUTES:qk]&quot;' value='Veryactive' />
+        </aliases>
+      </column>
+      <column caption='Activity Date' datatype='datetime' name='[ACTIVITY_DATE]' role='dimension' type='ordinal' />
+      <column caption='Activity Hour' datatype='datetime' name='[ACTIVITY_HOUR]' role='dimension' type='ordinal' />
+      <column caption='Activity Minute' datatype='datetime' name='[ACTIVITY_MINUTE]' role='dimension' type='ordinal' />
+      <column caption='Average Intensity' datatype='real' name='[AVERAGE_INTENSITY]' role='measure' type='quantitative' />
+      <column caption='Calories Burned (Prod Hourly Summary)' datatype='real' name='[CALORIES_BURNED (PROD_HOURLY_SUMMARY)]' role='measure' type='quantitative' />
+      <column caption='Calories Burned (Prod Minute Summary)' datatype='real' name='[CALORIES_BURNED (PROD_MINUTE_SUMMARY)]' role='measure' type='quantitative' />
+      <column caption='Calories Burned' datatype='real' name='[CALORIES_BURNED]' role='measure' type='quantitative' />
+      <column caption='Active Minutes' datatype='real' name='[Calculation_448389656769003520]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='(24*60) - [TOTAL_TIME_IN_BED]' />
+      </column>
+      <column caption='Active Hours' datatype='real' default-format='n#,##0.00;-#,##0.00' name='[Calculation_448389656770265089]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_448389656769003520]/60' />
+      </column>
+      <column caption='Sedentary Hours' datatype='real' name='[Calculation_448389656771493890]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[SEDENTARY_MINUTES]/60' />
+      </column>
+      <column caption='Total Hrs. Asleep' datatype='real' default-format='n#,##0.00;-#,##0.00' name='[Calculation_448389656772612099]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[TOTAL_MINUTES_ASLEEP]/60' />
+      </column>
+      <column caption='Datekey (Prod Heartrate Seconds)' datatype='integer' name='[DATEKEY (PROD_HEARTRATE_SECONDS)]' role='measure' type='quantitative' />
+      <column caption='Datekey (Prod Hourly Summary)' datatype='integer' name='[DATEKEY (PROD_HOURLY_SUMMARY)]' role='measure' type='quantitative' />
+      <column caption='Datekey (Prod Minute Summary)' datatype='integer' name='[DATEKEY (PROD_MINUTE_SUMMARY)]' role='measure' type='quantitative' />
+      <column caption='Datekey' datatype='integer' name='[DATEKEY]' role='measure' type='quantitative' />
+      <column caption='Fairlyactive Minutes' datatype='real' name='[FAIRLYACTIVE_MINUTES]' role='measure' type='quantitative' />
+      <column caption='Fat Percentage' datatype='real' name='[FAT_PERCENTAGE]' role='measure' type='quantitative' />
+      <column caption='Heartrate' datatype='real' name='[HEARTRATE]' role='measure' type='quantitative' />
+      <column caption='Id (Prod Daily Summary)' datatype='real' default-format='n#,##0;-#,##0' name='[ID (PROD_DAILY_SUMMARY)]' role='dimension' type='ordinal' />
+      <column caption='Id (Prod Heartrate Seconds)' datatype='real' name='[ID (PROD_HEARTRATE_SECONDS)]' role='dimension' type='ordinal' />
+      <column caption='Id (Prod Hourly Summary)' datatype='real' name='[ID (PROD_HOURLY_SUMMARY)]' role='dimension' type='ordinal' />
+      <column caption='Id (Prod Minute Summary)' datatype='real' name='[ID (PROD_MINUTE_SUMMARY)]' role='dimension' type='ordinal' />
+      <column datatype='real' name='[ID]' role='dimension' type='ordinal' />
+      <column caption='Intensity' datatype='real' name='[INTENSITY]' role='measure' type='quantitative' />
+      <column caption='Lightactive Distance Kilometer' datatype='real' name='[LIGHTACTIVE_DISTANCE_KILOMETER]' role='measure' type='quantitative' />
+      <column caption='Lightlyactive Minutes' datatype='real' name='[LIGHTLYACTIVE_MINUTES]' role='measure' type='quantitative' />
+      <column caption='Logged Activities Distance Kilometer' datatype='real' name='[LOGGED_ACTIVITIES_DISTANCE_KILOMETER]' role='measure' type='quantitative' />
+      <column caption='Measurement Time' datatype='datetime' name='[MEASUREMENT_TIME]' role='dimension' type='ordinal' />
+      <column caption='Mets' datatype='real' name='[METS]' role='measure' type='quantitative' />
+      <column caption='Moderatelyactive Distance Kilometer' datatype='real' name='[MODERATELYACTIVE_DISTANCE_KILOMETER]' role='measure' type='quantitative' />
+      <column caption='Sedentaryactive Distance Kilometer' datatype='real' name='[SEDENTARYACTIVE_DISTANCE_KILOMETER]' role='measure' type='quantitative' />
+      <column caption='Sedentary Minutes' datatype='real' name='[SEDENTARY_MINUTES]' role='measure' type='quantitative' />
+      <column caption='Sleep State' datatype='real' name='[SLEEP_STATE]' role='measure' type='quantitative' />
+      <column caption='Steps' datatype='real' name='[STEPS]' role='measure' type='quantitative' />
+      <column caption='Step Total' datatype='real' name='[STEP_TOTAL]' role='measure' type='quantitative' />
+      <column caption='Total Distance Kilometer' datatype='real' name='[TOTAL_DISTANCE_KILOMETER]' role='measure' type='quantitative' />
+      <column caption='Total Intensity' datatype='real' name='[TOTAL_INTENSITY]' role='measure' type='quantitative' />
+      <column caption='Total Minutes Asleep' datatype='real' name='[TOTAL_MINUTES_ASLEEP]' role='measure' type='quantitative' />
+      <column caption='Total Sleep Records' datatype='real' name='[TOTAL_SLEEP_RECORDS]' role='measure' type='quantitative' />
+      <column caption='Total Steps' datatype='real' name='[TOTAL_STEPS]' role='measure' type='quantitative' />
+      <column caption='Total Time In Bed' datatype='real' name='[TOTAL_TIME_IN_BED]' role='measure' type='quantitative' />
+      <column caption='Tracker Distance Kilometer' datatype='real' name='[TRACKER_DISTANCE_KILOMETER]' role='measure' type='quantitative' />
+      <column caption='Veryactive Distance Kilometer' datatype='real' name='[VERYACTIVE_DISTANCE_KILOMETER]' role='measure' type='quantitative' />
+      <column caption='Veryactive Minutes' datatype='real' name='[VERYACTIVE_MINUTES]' role='measure' type='quantitative' />
+      <column caption='Weight Kg' datatype='real' name='[WEIGHT_KG]' role='measure' type='quantitative' />
+      <column caption='Weight Pounds' datatype='real' name='[WEIGHT_POUNDS]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='PROD_DAILY_SUMMARY' datatype='table' name='[__tableau_internal_object_id__].[PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='PROD_HEARTRATE_SECONDS' datatype='table' name='[__tableau_internal_object_id__].[PROD_HEARTRATE_SECONDS_871DF680476D481B8BA6963A2BE5668E]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='PROD_HOURLY_SUMMARY' datatype='table' name='[__tableau_internal_object_id__].[PROD_HOURLY_SUMMARY_179053B0679D494C8BB553DF31E6ADE8]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='PROD_ID' datatype='table' name='[__tableau_internal_object_id__].[PROD_ID_3547B4DC801441E6929ABC687B341792]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='PROD_MINUTE_SUMMARY' datatype='table' name='[__tableau_internal_object_id__].[PROD_MINUTE_SUMMARY_3F4BE9168AA845F4A3C1CB73C0755C69]' role='measure' type='quantitative' />
+      <column-instance column='[Calculation_448389656770265089]' derivation='Avg' name='[avg:Calculation_448389656770265089:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_448389656771493890]' derivation='Avg' name='[avg:Calculation_448389656771493890:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_448389656772612099]' derivation='Avg' name='[avg:Calculation_448389656772612099:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[FAIRLYACTIVE_MINUTES]' derivation='Avg' name='[avg:FAIRLYACTIVE_MINUTES:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[LIGHTLYACTIVE_MINUTES]' derivation='Avg' name='[avg:LIGHTLYACTIVE_MINUTES:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[VERYACTIVE_MINUTES]' derivation='Avg' name='[avg:VERYACTIVE_MINUTES:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[CALORIES_BURNED]' derivation='Sum' name='[sum:CALORIES_BURNED:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_448389656769003520]' derivation='Sum' name='[sum:Calculation_448389656769003520:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_448389656772612099]' derivation='Sum' name='[sum:Calculation_448389656772612099:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[FAIRLYACTIVE_MINUTES]' derivation='Sum' name='[sum:FAIRLYACTIVE_MINUTES:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[LIGHTLYACTIVE_MINUTES]' derivation='Sum' name='[sum:LIGHTLYACTIVE_MINUTES:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[TOTAL_DISTANCE_KILOMETER]' derivation='Sum' name='[sum:TOTAL_DISTANCE_KILOMETER:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[TOTAL_MINUTES_ASLEEP]' derivation='Sum' name='[sum:TOTAL_MINUTES_ASLEEP:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[TOTAL_STEPS]' derivation='Sum' name='[sum:TOTAL_STEPS:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[TOTAL_TIME_IN_BED]' derivation='Sum' name='[sum:TOTAL_TIME_IN_BED:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[VERYACTIVE_MINUTES]' derivation='Sum' name='[sum:VERYACTIVE_MINUTES:qk]' pivot='key' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-aliased-fields='true' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:Calculation_448389656770265089:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:FAIRLYACTIVE_MINUTES:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:Calculation_448389656769003520:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:LIGHTLYACTIVE_MINUTES:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:LIGHTLYACTIVE_MINUTES:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:FAIRLYACTIVE_MINUTES:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:Calculation_448389656772612099:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:Calculation_448389656772612099:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:VERYACTIVE_MINUTES:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:VERYACTIVE_MINUTES:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:Calculation_448389656771493890:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:AdhocCluster:4:ok]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>3</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>4</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>0</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>2</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>1</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:AdhocCluster:6:ok]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>0</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>3</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>2</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:AdhocCluster:1:ok]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>0</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>2</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:AdhocCluster:3:ok]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>4</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>0</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>3</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>5</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>2</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='ID' />
+      </field-sort-info>
+      <analytic-model>
+        <name>
+          <field name='[AnalyticModel:{06525deb-68c1-4f7e-a64a-c105908389d1}]' />
+        </name>
+        <analytic-model-specifications class='cluster-specifications'>
+          <analysis-fields>
+            <field name='[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:CALORIES_BURNED:qk]' />
+            <field name='[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:TOTAL_STEPS:qk]' />
+          </analysis-fields>
+          <filter-fields />
+          <lod-fields />
+          <number-of-desired-clusters>0</number-of-desired-clusters>
+          <is-dissagregate>false</is-dissagregate>
+        </analytic-model-specifications>
+        <result-fields />
+      </analytic-model>
+      <analytic-model>
+        <name>
+          <field name='[AnalyticModel:{51edf0ae-e24a-40c9-9819-abb538294d91}]' />
+        </name>
+        <analytic-model-specifications class='cluster-specifications'>
+          <analysis-fields>
+            <field name='[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:TOTAL_MINUTES_ASLEEP:qk]' />
+            <field name='[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:TOTAL_TIME_IN_BED:qk]' />
+          </analysis-fields>
+          <filter-fields />
+          <lod-fields />
+          <number-of-desired-clusters>0</number-of-desired-clusters>
+          <is-dissagregate>false</is-dissagregate>
+        </analytic-model-specifications>
+        <result-fields />
+      </analytic-model>
+      <analytic-model>
+        <name>
+          <field name='[AnalyticModel:{55d7fa44-3f42-4057-8334-3db521e48364}]' />
+        </name>
+        <analytic-model-specifications class='cluster-specifications'>
+          <analysis-fields>
+            <field name='[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:TOTAL_DISTANCE_KILOMETER:qk]' />
+            <field name='[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:TOTAL_MINUTES_ASLEEP:qk]' />
+          </analysis-fields>
+          <filter-fields />
+          <lod-fields />
+          <number-of-desired-clusters>5</number-of-desired-clusters>
+          <is-dissagregate>false</is-dissagregate>
+        </analytic-model-specifications>
+        <result-fields />
+      </analytic-model>
+      <analytic-model>
+        <name>
+          <field name='[AnalyticModel:{5cbc317a-28ad-4f63-81d0-fdc7e8c2a852}]' />
+        </name>
+        <analytic-model-specifications class='cluster-specifications'>
+          <analysis-fields>
+            <field name='[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:CALORIES_BURNED:qk]' />
+            <field name='[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:TOTAL_DISTANCE_KILOMETER:qk]' />
+            <field name='[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:VERYACTIVE_MINUTES:qk]' />
+          </analysis-fields>
+          <filter-fields />
+          <lod-fields />
+          <number-of-desired-clusters>2</number-of-desired-clusters>
+          <is-dissagregate>false</is-dissagregate>
+        </analytic-model-specifications>
+        <result-fields />
+      </analytic-model>
+      <analytic-model>
+        <name>
+          <field name='[AnalyticModel:{b9dda6d7-2a80-4f60-b370-808d79d628e7}]' />
+        </name>
+        <analytic-model-specifications class='cluster-specifications'>
+          <analysis-fields>
+            <field name='[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:CALORIES_BURNED:qk]' />
+            <field name='[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:TOTAL_MINUTES_ASLEEP:qk]' />
+          </analysis-fields>
+          <filter-fields />
+          <lod-fields />
+          <number-of-desired-clusters>3</number-of-desired-clusters>
+          <is-dissagregate>false</is-dissagregate>
+        </analytic-model-specifications>
+        <result-fields />
+      </analytic-model>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='PROD_DAILY_SUMMARY' id='PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5'>
+            <properties context=''>
+              <relation connection='oracle.004w3yz03dfowz175mh7v03ugm63' name='PROD_DAILY_SUMMARY' table='[FITNESS_DATA].[PROD_DAILY_SUMMARY]' type='table' />
+            </properties>
+          </object>
+          <object caption='PROD_HEARTRATE_SECONDS' id='PROD_HEARTRATE_SECONDS_871DF680476D481B8BA6963A2BE5668E'>
+            <properties context=''>
+              <relation connection='oracle.004w3yz03dfowz175mh7v03ugm63' name='PROD_HEARTRATE_SECONDS' table='[FITNESS_DATA].[PROD_HEARTRATE_SECONDS]' type='table' />
+            </properties>
+          </object>
+          <object caption='PROD_HOURLY_SUMMARY' id='PROD_HOURLY_SUMMARY_179053B0679D494C8BB553DF31E6ADE8'>
+            <properties context=''>
+              <relation connection='oracle.004w3yz03dfowz175mh7v03ugm63' name='PROD_HOURLY_SUMMARY' table='[FITNESS_DATA].[PROD_HOURLY_SUMMARY]' type='table' />
+            </properties>
+          </object>
+          <object caption='PROD_ID' id='PROD_ID_3547B4DC801441E6929ABC687B341792'>
+            <properties context=''>
+              <relation connection='oracle.004w3yz03dfowz175mh7v03ugm63' name='PROD_ID' table='[FITNESS_DATA].[PROD_ID]' type='table' />
+            </properties>
+          </object>
+          <object caption='PROD_MINUTE_SUMMARY' id='PROD_MINUTE_SUMMARY_3F4BE9168AA845F4A3C1CB73C0755C69'>
+            <properties context=''>
+              <relation connection='oracle.004w3yz03dfowz175mh7v03ugm63' name='PROD_MINUTE_SUMMARY' table='[FITNESS_DATA].[PROD_MINUTE_SUMMARY]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[ID]' />
+              <expression op='[ID (PROD_DAILY_SUMMARY)]' />
+            </expression>
+            <first-end-point object-id='PROD_ID_3547B4DC801441E6929ABC687B341792' />
+            <second-end-point object-id='PROD_DAILY_SUMMARY_474906B6E0B94E1F87AB7E1F34B1B1D5' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[ID]' />
+              <expression op='[ID (PROD_HEARTRATE_SECONDS)]' />
+            </expression>
+            <first-end-point object-id='PROD_ID_3547B4DC801441E6929ABC687B341792' />
+            <second-end-point object-id='PROD_HEARTRATE_SECONDS_871DF680476D481B8BA6963A2BE5668E' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[ID]' />
+              <expression op='[ID (PROD_HOURLY_SUMMARY)]' />
+            </expression>
+            <first-end-point object-id='PROD_ID_3547B4DC801441E6929ABC687B341792' />
+            <second-end-point object-id='PROD_HOURLY_SUMMARY_179053B0679D494C8BB553DF31E6ADE8' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[ID]' />
+              <expression op='[ID (PROD_MINUTE_SUMMARY)]' />
+            </expression>
+            <first-end-point object-id='PROD_ID_3547B4DC801441E6929ABC687B341792' />
+            <second-end-point object-id='PROD_MINUTE_SUMMARY_3F4BE9168AA845F4A3C1CB73C0755C69' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Highlight 1 (generated)' name='[Action1_1719E21A0B39477187A0C59F89A4DA9A]'>
+      <activation auto-clear='true' type='on-select' />
+      <source type='sheet' worksheet='Time in Bed vs Time Asleep' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Clusters (1)' />
+        <param name='target' value='Time in Bed vs Time Asleep' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Active Days by Calories Burned'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='PROD_ID+ (FITNESS_DATA)' name='federated.0kuluxs0kd0fg010km8a112b4c5y' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0kuluxs0kd0fg010km8a112b4c5y'>
+            <column caption='Activity Date' datatype='datetime' name='[ACTIVITY_DATE]' role='dimension' type='ordinal' />
+            <column caption='Calories Burned' datatype='real' name='[CALORIES_BURNED]' role='measure' type='quantitative' />
+            <column-instance column='[CALORIES_BURNED]' derivation='Avg' name='[avg:CALORIES_BURNED:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ACTIVITY_DATE]' derivation='Weekday' name='[wd:ACTIVITY_DATE:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:CALORIES_BURNED:qk]' palette='red_green_gold_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:CALORIES_BURNED:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:CALORIES_BURNED:qk]</rows>
+        <cols>[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]</cols>
+      </table>
+      <simple-id uuid='{4DBF4D30-13CA-4F1E-AB8E-A075732BA741}' />
+    </worksheet>
+    <worksheet name='Active Days by Distance'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='PROD_ID+ (FITNESS_DATA)' name='federated.0kuluxs0kd0fg010km8a112b4c5y' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0kuluxs0kd0fg010km8a112b4c5y'>
+            <column caption='Activity Date' datatype='datetime' name='[ACTIVITY_DATE]' role='dimension' type='ordinal' />
+            <column caption='Total Distance Kilometer' datatype='real' name='[TOTAL_DISTANCE_KILOMETER]' role='measure' type='quantitative' />
+            <column-instance column='[TOTAL_DISTANCE_KILOMETER]' derivation='Avg' name='[avg:TOTAL_DISTANCE_KILOMETER:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ACTIVITY_DATE]' derivation='Weekday' name='[wd:ACTIVITY_DATE:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:TOTAL_DISTANCE_KILOMETER:qk]' num-steps='6' palette='orange_blue_white_diverging_10_0' symmetric='false' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:TOTAL_DISTANCE_KILOMETER:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:TOTAL_DISTANCE_KILOMETER:qk]</rows>
+        <cols>[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]</cols>
+      </table>
+      <simple-id uuid='{2C92E6F9-1FAA-4937-86A4-3CED083B64A3}' />
+    </worksheet>
+    <worksheet name='Avg Active Hrs and Sleep Hrs per Day'>
+      <layout-options>
+        <caption>
+          <formatted-text>
+            <run>The trends of average of Active Hours and Avg. Total Hrs. Asleep for Activity Date Weekday.  For pane Average of Active Hours:  Color shows average of Active Hours.  For pane Average of Total Hrs. Asleep:  Color shows details about Avg. Total Hrs. Asleep.
+- Active Hours = 24 - [Total time in bed in hours]</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='PROD_ID+ (FITNESS_DATA)' name='federated.0kuluxs0kd0fg010km8a112b4c5y' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Minimum Required Sleep for Adults in Hours' datatype='real' default-format='n#,##0.0&quot; Hours&quot;;-#,##0.0&quot; Hours&quot;' name='[Parameter 2]' param-domain-type='any' role='measure' type='quantitative' value='7.'>
+              <calculation class='tableau' formula='7.' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0kuluxs0kd0fg010km8a112b4c5y'>
+            <column caption='Activity Date' datatype='datetime' name='[ACTIVITY_DATE]' role='dimension' type='ordinal' />
+            <column caption='Active Minutes' datatype='real' name='[Calculation_448389656769003520]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='(24*60) - [TOTAL_TIME_IN_BED]' />
+            </column>
+            <column caption='Active Hours' datatype='real' default-format='n#,##0.00;-#,##0.00' name='[Calculation_448389656770265089]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_448389656769003520]/60' />
+            </column>
+            <column caption='Total Hrs. Asleep' datatype='real' default-format='n#,##0.00;-#,##0.00' name='[Calculation_448389656772612099]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[TOTAL_MINUTES_ASLEEP]/60' />
+            </column>
+            <column caption='Total Minutes Asleep' datatype='real' name='[TOTAL_MINUTES_ASLEEP]' role='measure' type='quantitative' />
+            <column caption='Total Time In Bed' datatype='real' name='[TOTAL_TIME_IN_BED]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_448389656770265089]' derivation='Avg' name='[avg:Calculation_448389656770265089:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_448389656772612099]' derivation='Avg' name='[avg:Calculation_448389656772612099:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ACTIVITY_DATE]' derivation='Weekday' name='[wd:ACTIVITY_DATE:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='width' field='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:Calculation_448389656770265089:qk]' value='73' />
+            <format attr='width' field='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:Calculation_448389656772612099:qk]' value='73' />
+            <encoding attr='space' class='0' field='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:Calculation_448389656772612099:qk]' field-type='quantitative' fold='true' scope='rows' synchronized='true' type='space' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]' value='117' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:Calculation_448389656770265089:qk]' num-steps='27' palette='red_green_diverging_10_0' symmetric='false' type='interpolated' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='line-visibility' id='refline0' value='on' />
+            <format attr='line-pattern-only' id='refline0' value='dashed' />
+            <format attr='stroke-color' id='refline0' value='#000000a7' />
+            <format attr='stroke-size' id='refline0' value='3' />
+            <format attr='color' id='refline0' value='#000000' />
+            <format attr='background-color' id='refline0' value='#ffff7f7f' />
+            <format attr='wrap' id='refline0' value='off' />
+            <format attr='text-align' id='refline0' value='right' />
+            <format attr='text-orientation' id='refline0' value='0' />
+            <format attr='vertical-align' id='refline0' value='top' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]' value='Line Chart Parameter'>
+              <formatted-text>
+                <run>Line Chart Parameter</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <reference-line axis-column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:Calculation_448389656770265089:qk]' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-table' value-column='[Parameters].[Parameter 2]' z-order='1' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:Calculation_448389656770265089:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:Calculation_448389656770265089:qk]' />
+            </encodings>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:Calculation_448389656772612099:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:Calculation_448389656770265089:qk] + [federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:Calculation_448389656772612099:qk])</rows>
+        <cols>[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]</cols>
+      </table>
+      <simple-id uuid='{45A4B1DA-C2BF-49C1-9809-3F8BB1928DAE}' />
+    </worksheet>
+    <worksheet name='Daily Activity Split in Minutes'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='PROD_ID+ (FITNESS_DATA)' name='federated.0kuluxs0kd0fg010km8a112b4c5y' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0kuluxs0kd0fg010km8a112b4c5y'>
+            <column caption='Activity Date' datatype='datetime' name='[ACTIVITY_DATE]' role='dimension' type='ordinal' />
+            <column caption='Fairlyactive Minutes' datatype='real' name='[FAIRLYACTIVE_MINUTES]' role='measure' type='quantitative' />
+            <column caption='Lightlyactive Minutes' datatype='real' name='[LIGHTLYACTIVE_MINUTES]' role='measure' type='quantitative' />
+            <column caption='Veryactive Minutes' datatype='real' name='[VERYACTIVE_MINUTES]' role='measure' type='quantitative' />
+            <column-instance column='[FAIRLYACTIVE_MINUTES]' derivation='Avg' name='[avg:FAIRLYACTIVE_MINUTES:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[LIGHTLYACTIVE_MINUTES]' derivation='Avg' name='[avg:LIGHTLYACTIVE_MINUTES:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[VERYACTIVE_MINUTES]' derivation='Avg' name='[avg:VERYACTIVE_MINUTES:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ACTIVITY_DATE]' derivation='Weekday' name='[wd:ACTIVITY_DATE:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:LIGHTLYACTIVE_MINUTES:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:FAIRLYACTIVE_MINUTES:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:VERYACTIVE_MINUTES:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:LIGHTLYACTIVE_MINUTES:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:FAIRLYACTIVE_MINUTES:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:VERYACTIVE_MINUTES:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]' scope='rows' value='Minutes' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='fill-above' id='refline1' value='#00000000' />
+            <format attr='fill-below' id='refline1' value='#00000000' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]' value='Activity Type'>
+              <formatted-text>
+                <run>Activity Type</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+          <style-rule element='annotation'>
+            <format attr='fill-color' id='annotation_2' value='#f5ead7e7' />
+            <format attr='line-visibility' id='annotation_2' value='on' />
+            <format attr='line-pattern-only' id='annotation_2' value='dashed' />
+            <format attr='border-style' id='annotation_2' value='dashed' />
+            <format attr='border-width' id='annotation_2' value='2' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]</rows>
+        <cols>([federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok] / [federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names])</cols>
+        <mark-labels>
+          <mark-label id='0' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]</field>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]</field>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]</field>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>2</value>
+                <value>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:VERYACTIVE_MINUTES:qk]&quot;</value>
+                <value>21.606382978723403</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='1' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]</field>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]</field>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]</field>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>1</value>
+                <value>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:VERYACTIVE_MINUTES:qk]&quot;</value>
+                <value>18.253886010362695</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='2' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]</field>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]</field>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]</field>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>3</value>
+                <value>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:VERYACTIVE_MINUTES:qk]&quot;</value>
+                <value>19.773333333333333</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='3' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]</field>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]</field>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]</field>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>4</value>
+                <value>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:VERYACTIVE_MINUTES:qk]&quot;</value>
+                <value>19.858585858585858</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='4' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]</field>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]</field>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]</field>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>5</value>
+                <value>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:VERYACTIVE_MINUTES:qk]&quot;</value>
+                <value>18.923076923076923</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='5' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]</field>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]</field>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]</field>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>6</value>
+                <value>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:VERYACTIVE_MINUTES:qk]&quot;</value>
+                <value>18.5678391959799</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='6' label-state='on'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]</field>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]</field>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]</field>
+                  <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>7</value>
+                <value>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:VERYACTIVE_MINUTES:qk]&quot;</value>
+                <value>20.809045226130653</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+        </mark-labels>
+        <annotations>
+          <annotation class='point' id='2' mark-position='1' pullback='0' text-width='233'>
+            <formatted-text>
+              <run bold='true' fontcolor='#000000' fontsize='9' italic='true'>Maximum Very Active Minutes</run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.4'>
+                  <node-reference>
+                    <fields>
+                      <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]</field>
+                      <field>[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]</field>
+                    </fields>
+                    <multibucket>
+                      <bucket>2</bucket>
+                      <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:VERYACTIVE_MINUTES:qk]&quot;</bucket>
+                    </multibucket>
+                  </node-reference>
+                </x-coord>
+                <y-coord axis-value='14.367827775239849'>
+                  <node-reference>
+                    <axis>[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]</axis>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </point>
+            <body x='-74' y='-111' />
+          </annotation>
+        </annotations>
+      </table>
+      <simple-id uuid='{68E56302-990C-4AE8-9A6B-BF1A6E4B5E31}' />
+    </worksheet>
+    <worksheet name='Daily Stats'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='PROD_ID+ (FITNESS_DATA)' name='federated.0kuluxs0kd0fg010km8a112b4c5y' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0kuluxs0kd0fg010km8a112b4c5y'>
+            <column caption='Activity Date' datatype='datetime' name='[ACTIVITY_DATE]' role='dimension' type='ordinal' />
+            <column caption='Calories Burned' datatype='real' name='[CALORIES_BURNED]' role='measure' type='quantitative' />
+            <column caption='Active Minutes' datatype='real' name='[Calculation_448389656769003520]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='(24*60) - [TOTAL_TIME_IN_BED]' />
+            </column>
+            <column caption='Active Hours' datatype='real' default-format='n#,##0.00;-#,##0.00' name='[Calculation_448389656770265089]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_448389656769003520]/60' />
+            </column>
+            <column caption='Fairlyactive Minutes' datatype='real' name='[FAIRLYACTIVE_MINUTES]' role='measure' type='quantitative' />
+            <column caption='Total Distance Kilometer' datatype='real' name='[TOTAL_DISTANCE_KILOMETER]' role='measure' type='quantitative' />
+            <column caption='Total Steps' datatype='real' name='[TOTAL_STEPS]' role='measure' type='quantitative' />
+            <column caption='Total Time In Bed' datatype='real' name='[TOTAL_TIME_IN_BED]' role='measure' type='quantitative' />
+            <column caption='Veryactive Minutes' datatype='real' name='[VERYACTIVE_MINUTES]' role='measure' type='quantitative' />
+            <column-instance column='[CALORIES_BURNED]' derivation='Avg' name='[avg:CALORIES_BURNED:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_448389656770265089]' derivation='Avg' name='[avg:Calculation_448389656770265089:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[FAIRLYACTIVE_MINUTES]' derivation='Avg' name='[avg:FAIRLYACTIVE_MINUTES:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TOTAL_DISTANCE_KILOMETER]' derivation='Avg' name='[avg:TOTAL_DISTANCE_KILOMETER:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TOTAL_STEPS]' derivation='Avg' name='[avg:TOTAL_STEPS:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[VERYACTIVE_MINUTES]' derivation='Avg' name='[avg:VERYACTIVE_MINUTES:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ACTIVITY_DATE]' derivation='Weekday' name='[wd:ACTIVITY_DATE:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:Calculation_448389656770265089:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:CALORIES_BURNED:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:TOTAL_DISTANCE_KILOMETER:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:FAIRLYACTIVE_MINUTES:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:TOTAL_STEPS:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:VERYACTIVE_MINUTES:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:Calculation_448389656770265089:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:CALORIES_BURNED:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:TOTAL_DISTANCE_KILOMETER:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:VERYACTIVE_MINUTES:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:FAIRLYACTIVE_MINUTES:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:TOTAL_STEPS:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]' value='117' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0kuluxs0kd0fg010km8a112b4c5y].[wd:ACTIVITY_DATE:ok]</rows>
+        <cols>[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{E1C52A57-B9C6-4768-AEC0-7E4B09704D13}' />
+    </worksheet>
+    <worksheet name='Time in Bed vs Time Asleep'>
+      <layout-options>
+        <caption>
+          <formatted-text>
+            <run>Total Time In Bed vs. Total Minutes Asleep.  Color shows details about Clusters
+. The data is filtered on Total Time In Bed, which keeps non-Null values only.</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='PROD_ID+ (FITNESS_DATA)' name='federated.0kuluxs0kd0fg010km8a112b4c5y' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0kuluxs0kd0fg010km8a112b4c5y'>
+            <column auto-hidden='true' caption='Clusters (1)' datatype='integer' hidden='true' is-adhoc-cluster='true' name='[AdhocCluster:2]' parent-model='[AnalyticModel:{51edf0ae-e24a-40c9-9819-abb538294d91}]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='-1' value='Cluster Outliers' />
+                <alias key='0' value='Not Clustered' />
+                <alias key='1' value='Cluster 1' />
+                <alias key='2' value='Cluster 2' />
+                <alias key='3' value='Cluster 3' />
+                <alias key='4' value='Cluster 4' />
+                <alias key='5' value='Cluster 5' />
+                <alias key='6' value='Cluster 6' />
+                <alias key='7' value='Cluster 7' />
+                <alias key='8' value='Cluster 8' />
+                <alias key='9' value='Cluster 9' />
+                <alias key='10' value='Cluster 10' />
+                <alias key='11' value='Cluster 11' />
+                <alias key='12' value='Cluster 12' />
+                <alias key='13' value='Cluster 13' />
+                <alias key='14' value='Cluster 14' />
+                <alias key='15' value='Cluster 15' />
+                <alias key='16' value='Cluster 16' />
+                <alias key='17' value='Cluster 17' />
+                <alias key='18' value='Cluster 18' />
+                <alias key='19' value='Cluster 19' />
+                <alias key='20' value='Cluster 20' />
+                <alias key='21' value='Cluster 21' />
+                <alias key='22' value='Cluster 22' />
+                <alias key='23' value='Cluster 23' />
+                <alias key='24' value='Cluster 24' />
+                <alias key='25' value='Cluster 25' />
+                <alias key='26' value='Cluster 26' />
+                <alias key='27' value='Cluster 27' />
+                <alias key='28' value='Cluster 28' />
+                <alias key='29' value='Cluster 29' />
+                <alias key='30' value='Cluster 30' />
+                <alias key='31' value='Cluster 31' />
+                <alias key='32' value='Cluster 32' />
+                <alias key='33' value='Cluster 33' />
+                <alias key='34' value='Cluster 34' />
+                <alias key='35' value='Cluster 35' />
+                <alias key='36' value='Cluster 36' />
+                <alias key='37' value='Cluster 37' />
+                <alias key='38' value='Cluster 38' />
+                <alias key='39' value='Cluster 39' />
+                <alias key='40' value='Cluster 40' />
+                <alias key='41' value='Cluster 41' />
+                <alias key='42' value='Cluster 42' />
+                <alias key='43' value='Cluster 43' />
+                <alias key='44' value='Cluster 44' />
+                <alias key='45' value='Cluster 45' />
+                <alias key='46' value='Cluster 46' />
+                <alias key='47' value='Cluster 47' />
+                <alias key='48' value='Cluster 48' />
+                <alias key='49' value='Cluster 49' />
+                <alias key='50' value='Cluster 50' />
+              </aliases>
+            </column>
+            <column caption='Total Minutes Asleep' datatype='real' name='[TOTAL_MINUTES_ASLEEP]' role='measure' type='quantitative' />
+            <column caption='Total Time In Bed' datatype='real' name='[TOTAL_TIME_IN_BED]' role='measure' type='quantitative' />
+            <column-instance column='[AdhocCluster:2]' derivation='None' is-adhoc-cluster='true' name='[none:AdhocCluster:2:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[TOTAL_TIME_IN_BED]' derivation='None' name='[none:TOTAL_TIME_IN_BED:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TOTAL_MINUTES_ASLEEP]' derivation='Sum' name='[sum:TOTAL_MINUTES_ASLEEP:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TOTAL_TIME_IN_BED]' derivation='Sum' name='[sum:TOTAL_TIME_IN_BED:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:TOTAL_TIME_IN_BED:qk]' included-values='non-null' />
+          <slices>
+            <column>[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:TOTAL_TIME_IN_BED:qk]</column>
+          </slices>
+          <aggregation value='false' />
+        </view>
+        <style>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:2:ok]' value='Time in Bed vs Time Asleep'>
+              <formatted-text>
+                <run>Time in Bed vs Time Asleep</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:2:ok]' />
+            </encodings>
+            <trendline degree='6' enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='polynomial'>
+              <excluded-factors>
+                <column>[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:2:ok]</column>
+              </excluded-factors>
+            </trendline>
+          </pane>
+        </panes>
+        <rows>[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:TOTAL_MINUTES_ASLEEP:qk]</rows>
+        <cols>[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:TOTAL_TIME_IN_BED:qk]</cols>
+      </table>
+      <simple-id uuid='{CCC6A2DC-387B-4703-9D2A-52785674DB79}' />
+    </worksheet>
+    <worksheet name='Total Calories Burned vs Sleep Analysis'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='PROD_ID+ (FITNESS_DATA)' name='federated.0kuluxs0kd0fg010km8a112b4c5y' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Minimum Required Sleep for Adults in Minutes' datatype='real' default-format='n#,##0&quot; Minutes&quot;;-#,##0&quot; Minutes&quot;' name='[Parameter 1]' param-domain-type='any' role='measure' type='quantitative' value='420.'>
+              <calculation class='tableau' formula='420.' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0kuluxs0kd0fg010km8a112b4c5y'>
+            <column auto-hidden='true' caption='Clusters (3)' datatype='integer' hidden='true' is-adhoc-cluster='true' name='[AdhocCluster:4]' parent-model='[AnalyticModel:{b9dda6d7-2a80-4f60-b370-808d79d628e7}]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='-1' value='Cluster Outliers' />
+                <alias key='0' value='Not Clustered' />
+                <alias key='1' value='Cluster 1' />
+                <alias key='2' value='Cluster 2' />
+                <alias key='3' value='Cluster 3' />
+                <alias key='4' value='Cluster 4' />
+                <alias key='5' value='Cluster 5' />
+                <alias key='6' value='Cluster 6' />
+                <alias key='7' value='Cluster 7' />
+                <alias key='8' value='Cluster 8' />
+                <alias key='9' value='Cluster 9' />
+                <alias key='10' value='Cluster 10' />
+                <alias key='11' value='Cluster 11' />
+                <alias key='12' value='Cluster 12' />
+                <alias key='13' value='Cluster 13' />
+                <alias key='14' value='Cluster 14' />
+                <alias key='15' value='Cluster 15' />
+                <alias key='16' value='Cluster 16' />
+                <alias key='17' value='Cluster 17' />
+                <alias key='18' value='Cluster 18' />
+                <alias key='19' value='Cluster 19' />
+                <alias key='20' value='Cluster 20' />
+                <alias key='21' value='Cluster 21' />
+                <alias key='22' value='Cluster 22' />
+                <alias key='23' value='Cluster 23' />
+                <alias key='24' value='Cluster 24' />
+                <alias key='25' value='Cluster 25' />
+                <alias key='26' value='Cluster 26' />
+                <alias key='27' value='Cluster 27' />
+                <alias key='28' value='Cluster 28' />
+                <alias key='29' value='Cluster 29' />
+                <alias key='30' value='Cluster 30' />
+                <alias key='31' value='Cluster 31' />
+                <alias key='32' value='Cluster 32' />
+                <alias key='33' value='Cluster 33' />
+                <alias key='34' value='Cluster 34' />
+                <alias key='35' value='Cluster 35' />
+                <alias key='36' value='Cluster 36' />
+                <alias key='37' value='Cluster 37' />
+                <alias key='38' value='Cluster 38' />
+                <alias key='39' value='Cluster 39' />
+                <alias key='40' value='Cluster 40' />
+                <alias key='41' value='Cluster 41' />
+                <alias key='42' value='Cluster 42' />
+                <alias key='43' value='Cluster 43' />
+                <alias key='44' value='Cluster 44' />
+                <alias key='45' value='Cluster 45' />
+                <alias key='46' value='Cluster 46' />
+                <alias key='47' value='Cluster 47' />
+                <alias key='48' value='Cluster 48' />
+                <alias key='49' value='Cluster 49' />
+                <alias key='50' value='Cluster 50' />
+              </aliases>
+            </column>
+            <column caption='Calories Burned' datatype='real' name='[CALORIES_BURNED]' role='measure' type='quantitative' />
+            <column caption='Total Minutes Asleep' datatype='real' name='[TOTAL_MINUTES_ASLEEP]' role='measure' type='quantitative' />
+            <column-instance column='[AdhocCluster:4]' derivation='None' is-adhoc-cluster='true' name='[none:AdhocCluster:4:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[TOTAL_MINUTES_ASLEEP]' derivation='None' name='[none:TOTAL_MINUTES_ASLEEP:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[CALORIES_BURNED]' derivation='Sum' name='[sum:CALORIES_BURNED:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TOTAL_MINUTES_ASLEEP]' derivation='Sum' name='[sum:TOTAL_MINUTES_ASLEEP:qk]' pivot='key' type='quantitative' />
+            <style>
+              <style-rule element='mark'>
+                <encoding attr='color' field='[none:AdhocCluster:4:ok]' type='palette'>
+                  <map to='#4e79a7'>
+                    <bucket>3</bucket>
+                  </map>
+                  <map to='#59a14f'>
+                    <bucket>4</bucket>
+                  </map>
+                  <map to='#76b7b2'>
+                    <bucket>0</bucket>
+                  </map>
+                  <map to='#e15759'>
+                    <bucket>2</bucket>
+                  </map>
+                  <map to='#f28e2b'>
+                    <bucket>1</bucket>
+                  </map>
+                </encoding>
+              </style-rule>
+            </style>
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:TOTAL_MINUTES_ASLEEP:qk]' included-values='non-null' />
+          <slices>
+            <column>[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:TOTAL_MINUTES_ASLEEP:qk]</column>
+          </slices>
+          <aggregation value='false' />
+        </view>
+        <style>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='line-visibility' id='refline0' value='on' />
+            <format attr='line-pattern-only' id='refline0' value='dashed' />
+            <format attr='stroke-size' id='refline0' value='3' />
+            <format attr='stroke-color' id='refline0' value='#000000a7' />
+            <format attr='background-color' id='refline0' value='#ffff7f7f' />
+            <format attr='font-weight' id='refline0' value='bold' />
+            <format attr='color' id='refline0' value='#000000' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:4:ok]' value='Total Calories Burned vs Sleep Analysis'>
+              <formatted-text>
+                <run>Total Calories Burned vs Sleep Analysis</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:4:ok]' />
+            </encodings>
+            <reference-line axis-column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:TOTAL_MINUTES_ASLEEP:qk]' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-table' value-column='[Parameters].[Parameter 1]' z-order='1' />
+          </pane>
+        </panes>
+        <rows>[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:TOTAL_MINUTES_ASLEEP:qk]</rows>
+        <cols>[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:CALORIES_BURNED:qk]</cols>
+      </table>
+      <simple-id uuid='{8627F23E-18FB-403A-8A4C-B55D84259A97}' />
+    </worksheet>
+    <worksheet name='Total Distance vs Calories Burned'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>&lt;Sheet Name&gt; </run>
+            <run fontsize='10' italic='true'>(&gt;1 km per day)</run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text>
+            <run>Total Steps vs. Calories Burned.  Color shows details about Clusters. The data is filtered on Total Steps, which keeps non-Null values only.
+On average a person could burn 1200 - 2400 calories a day through basic metabolic processes.</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='PROD_ID+ (FITNESS_DATA)' name='federated.0kuluxs0kd0fg010km8a112b4c5y' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0kuluxs0kd0fg010km8a112b4c5y'>
+            <column auto-hidden='true' caption='Clusters (5)' datatype='integer' hidden='true' is-adhoc-cluster='true' name='[AdhocCluster:6]' parent-model='[AnalyticModel:{5cbc317a-28ad-4f63-81d0-fdc7e8c2a852}]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='-1' value='Cluster Outliers' />
+                <alias key='0' value='Not Clustered' />
+                <alias key='1' value='Cluster 1' />
+                <alias key='2' value='Cluster 2' />
+                <alias key='3' value='Cluster 3' />
+                <alias key='4' value='Cluster 4' />
+                <alias key='5' value='Cluster 5' />
+                <alias key='6' value='Cluster 6' />
+                <alias key='7' value='Cluster 7' />
+                <alias key='8' value='Cluster 8' />
+                <alias key='9' value='Cluster 9' />
+                <alias key='10' value='Cluster 10' />
+                <alias key='11' value='Cluster 11' />
+                <alias key='12' value='Cluster 12' />
+                <alias key='13' value='Cluster 13' />
+                <alias key='14' value='Cluster 14' />
+                <alias key='15' value='Cluster 15' />
+                <alias key='16' value='Cluster 16' />
+                <alias key='17' value='Cluster 17' />
+                <alias key='18' value='Cluster 18' />
+                <alias key='19' value='Cluster 19' />
+                <alias key='20' value='Cluster 20' />
+                <alias key='21' value='Cluster 21' />
+                <alias key='22' value='Cluster 22' />
+                <alias key='23' value='Cluster 23' />
+                <alias key='24' value='Cluster 24' />
+                <alias key='25' value='Cluster 25' />
+                <alias key='26' value='Cluster 26' />
+                <alias key='27' value='Cluster 27' />
+                <alias key='28' value='Cluster 28' />
+                <alias key='29' value='Cluster 29' />
+                <alias key='30' value='Cluster 30' />
+                <alias key='31' value='Cluster 31' />
+                <alias key='32' value='Cluster 32' />
+                <alias key='33' value='Cluster 33' />
+                <alias key='34' value='Cluster 34' />
+                <alias key='35' value='Cluster 35' />
+                <alias key='36' value='Cluster 36' />
+                <alias key='37' value='Cluster 37' />
+                <alias key='38' value='Cluster 38' />
+                <alias key='39' value='Cluster 39' />
+                <alias key='40' value='Cluster 40' />
+                <alias key='41' value='Cluster 41' />
+                <alias key='42' value='Cluster 42' />
+                <alias key='43' value='Cluster 43' />
+                <alias key='44' value='Cluster 44' />
+                <alias key='45' value='Cluster 45' />
+                <alias key='46' value='Cluster 46' />
+                <alias key='47' value='Cluster 47' />
+                <alias key='48' value='Cluster 48' />
+                <alias key='49' value='Cluster 49' />
+                <alias key='50' value='Cluster 50' />
+              </aliases>
+            </column>
+            <column caption='Calories Burned' datatype='real' name='[CALORIES_BURNED]' role='measure' type='quantitative' />
+            <column caption='Total Distance Kilometer' datatype='real' name='[TOTAL_DISTANCE_KILOMETER]' role='measure' type='quantitative' />
+            <column caption='Veryactive Minutes' datatype='real' name='[VERYACTIVE_MINUTES]' role='measure' type='quantitative' />
+            <column-instance column='[AdhocCluster:6]' derivation='None' is-adhoc-cluster='true' name='[none:AdhocCluster:6:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[TOTAL_DISTANCE_KILOMETER]' derivation='None' name='[none:TOTAL_DISTANCE_KILOMETER:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[CALORIES_BURNED]' derivation='Sum' name='[sum:CALORIES_BURNED:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TOTAL_DISTANCE_KILOMETER]' derivation='Sum' name='[sum:TOTAL_DISTANCE_KILOMETER:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[VERYACTIVE_MINUTES]' derivation='Sum' name='[sum:VERYACTIVE_MINUTES:qk]' pivot='key' type='quantitative' />
+            <style>
+              <style-rule element='mark'>
+                <encoding attr='color' field='[none:AdhocCluster:6:ok]' type='palette'>
+                  <map to='#4e79a7'>
+                    <bucket>1</bucket>
+                  </map>
+                  <map to='#76b7b2'>
+                    <bucket>0</bucket>
+                  </map>
+                  <map to='#e15759'>
+                    <bucket>3</bucket>
+                  </map>
+                  <map to='#f28e2b'>
+                    <bucket>2</bucket>
+                  </map>
+                </encoding>
+              </style-rule>
+            </style>
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:TOTAL_DISTANCE_KILOMETER:qk]' included-values='in-range'>
+            <min>1.0</min>
+            <max>28.030000686645501</max>
+          </filter>
+          <slices>
+            <column>[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:TOTAL_DISTANCE_KILOMETER:qk]</column>
+          </slices>
+          <aggregation value='false' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <tooltip column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:VERYACTIVE_MINUTES:qk]' />
+              <color column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:6:ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:CALORIES_BURNED:qk]</rows>
+        <cols>[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:TOTAL_DISTANCE_KILOMETER:qk]</cols>
+      </table>
+      <simple-id uuid='{B462F840-EE47-4982-9DF7-A06C933C8227}' />
+    </worksheet>
+    <worksheet name='Total Distance vs Sleep Analysis'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>&lt;Sheet Name&gt; </run>
+            <run fontsize='10' italic='true'>(&gt;1 km per day)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='PROD_ID+ (FITNESS_DATA)' name='federated.0kuluxs0kd0fg010km8a112b4c5y' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Minimum Required Sleep for Adults in Minutes' datatype='real' default-format='n#,##0&quot; Minutes&quot;;-#,##0&quot; Minutes&quot;' name='[Parameter 1]' param-domain-type='any' role='measure' type='quantitative' value='420.'>
+              <calculation class='tableau' formula='420.' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0kuluxs0kd0fg010km8a112b4c5y'>
+            <column auto-hidden='true' caption='Clusters (2)' datatype='integer' hidden='true' is-adhoc-cluster='true' name='[AdhocCluster:3]' parent-model='[AnalyticModel:{55d7fa44-3f42-4057-8334-3db521e48364}]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='-1' value='Cluster Outliers' />
+                <alias key='0' value='Not Clustered' />
+                <alias key='1' value='Cluster 1' />
+                <alias key='2' value='Cluster 2' />
+                <alias key='3' value='Cluster 3' />
+                <alias key='4' value='Cluster 4' />
+                <alias key='5' value='Cluster 5' />
+                <alias key='6' value='Cluster 6' />
+                <alias key='7' value='Cluster 7' />
+                <alias key='8' value='Cluster 8' />
+                <alias key='9' value='Cluster 9' />
+                <alias key='10' value='Cluster 10' />
+                <alias key='11' value='Cluster 11' />
+                <alias key='12' value='Cluster 12' />
+                <alias key='13' value='Cluster 13' />
+                <alias key='14' value='Cluster 14' />
+                <alias key='15' value='Cluster 15' />
+                <alias key='16' value='Cluster 16' />
+                <alias key='17' value='Cluster 17' />
+                <alias key='18' value='Cluster 18' />
+                <alias key='19' value='Cluster 19' />
+                <alias key='20' value='Cluster 20' />
+                <alias key='21' value='Cluster 21' />
+                <alias key='22' value='Cluster 22' />
+                <alias key='23' value='Cluster 23' />
+                <alias key='24' value='Cluster 24' />
+                <alias key='25' value='Cluster 25' />
+                <alias key='26' value='Cluster 26' />
+                <alias key='27' value='Cluster 27' />
+                <alias key='28' value='Cluster 28' />
+                <alias key='29' value='Cluster 29' />
+                <alias key='30' value='Cluster 30' />
+                <alias key='31' value='Cluster 31' />
+                <alias key='32' value='Cluster 32' />
+                <alias key='33' value='Cluster 33' />
+                <alias key='34' value='Cluster 34' />
+                <alias key='35' value='Cluster 35' />
+                <alias key='36' value='Cluster 36' />
+                <alias key='37' value='Cluster 37' />
+                <alias key='38' value='Cluster 38' />
+                <alias key='39' value='Cluster 39' />
+                <alias key='40' value='Cluster 40' />
+                <alias key='41' value='Cluster 41' />
+                <alias key='42' value='Cluster 42' />
+                <alias key='43' value='Cluster 43' />
+                <alias key='44' value='Cluster 44' />
+                <alias key='45' value='Cluster 45' />
+                <alias key='46' value='Cluster 46' />
+                <alias key='47' value='Cluster 47' />
+                <alias key='48' value='Cluster 48' />
+                <alias key='49' value='Cluster 49' />
+                <alias key='50' value='Cluster 50' />
+              </aliases>
+            </column>
+            <column caption='Total Distance Kilometer' datatype='real' name='[TOTAL_DISTANCE_KILOMETER]' role='measure' type='quantitative' />
+            <column caption='Total Minutes Asleep' datatype='real' name='[TOTAL_MINUTES_ASLEEP]' role='measure' type='quantitative' />
+            <column-instance column='[AdhocCluster:3]' derivation='None' is-adhoc-cluster='true' name='[none:AdhocCluster:3:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[TOTAL_DISTANCE_KILOMETER]' derivation='None' name='[none:TOTAL_DISTANCE_KILOMETER:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TOTAL_DISTANCE_KILOMETER]' derivation='Sum' name='[sum:TOTAL_DISTANCE_KILOMETER:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TOTAL_MINUTES_ASLEEP]' derivation='Sum' name='[sum:TOTAL_MINUTES_ASLEEP:qk]' pivot='key' type='quantitative' />
+            <style>
+              <style-rule element='mark'>
+                <encoding attr='color' field='[none:AdhocCluster:3:ok]' type='palette'>
+                  <map to='#4e79a7'>
+                    <bucket>1</bucket>
+                  </map>
+                  <map to='#59a14f'>
+                    <bucket>4</bucket>
+                  </map>
+                  <map to='#76b7b2'>
+                    <bucket>0</bucket>
+                  </map>
+                  <map to='#e15759'>
+                    <bucket>3</bucket>
+                  </map>
+                  <map to='#edc948'>
+                    <bucket>5</bucket>
+                  </map>
+                  <map to='#f28e2b'>
+                    <bucket>2</bucket>
+                  </map>
+                </encoding>
+              </style-rule>
+            </style>
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:3:ok]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:AdhocCluster:3:ok]' />
+              <groupfilter function='member' level='[none:AdhocCluster:3:ok]' member='0' />
+            </groupfilter>
+          </filter>
+          <filter class='quantitative' column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:TOTAL_DISTANCE_KILOMETER:qk]' included-values='in-range'>
+            <min>1.0</min>
+            <max>28.030000686645501</max>
+          </filter>
+          <slices>
+            <column>[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:3:ok]</column>
+            <column>[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:TOTAL_DISTANCE_KILOMETER:qk]</column>
+          </slices>
+          <aggregation value='false' />
+        </view>
+        <style>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='line-visibility' id='refline0' value='on' />
+            <format attr='line-pattern-only' id='refline0' value='dashed' />
+            <format attr='stroke-size' id='refline0' value='3' />
+            <format attr='stroke-color' id='refline0' value='#000000a7' />
+            <format attr='background-color' id='refline0' value='#ffff7f7c' />
+            <format attr='font-weight' id='refline0' value='bold' />
+            <format attr='color' id='refline0' value='#000000' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:3:ok]' value='Total Distance vs Sleep Analysis'>
+              <formatted-text>
+                <run>Total Distance vs Sleep Analysis</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:3:ok]' />
+            </encodings>
+            <reference-line axis-column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:TOTAL_MINUTES_ASLEEP:qk]' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-table' value-column='[Parameters].[Parameter 1]' z-order='1' />
+          </pane>
+        </panes>
+        <rows>[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:TOTAL_MINUTES_ASLEEP:qk]</rows>
+        <cols>[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:TOTAL_DISTANCE_KILOMETER:qk]</cols>
+      </table>
+      <simple-id uuid='{FF1743DE-1F1C-4B8D-86B4-F42AD5A96F50}' />
+    </worksheet>
+    <worksheet name='Total Steps vs Calories Burned'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>&lt;Sheet Name&gt; </run>
+            <run fontsize='10' italic='true'>(&gt;1000 steps per day)</run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text>
+            <run>Total Steps vs. Calories Burned.  Color shows details about Clusters. The data is filtered on Total Steps, which keeps non-Null values only.
+On average a person could burn 1200 - 2400 calories a day through basic metabolic processes.</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='PROD_ID+ (FITNESS_DATA)' name='federated.0kuluxs0kd0fg010km8a112b4c5y' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0kuluxs0kd0fg010km8a112b4c5y'>
+            <column auto-hidden='true' caption='Clusters' datatype='integer' hidden='true' is-adhoc-cluster='true' name='[AdhocCluster:1]' parent-model='[AnalyticModel:{06525deb-68c1-4f7e-a64a-c105908389d1}]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='-1' value='Cluster Outliers' />
+                <alias key='0' value='Not Clustered' />
+                <alias key='1' value='Cluster 1' />
+                <alias key='2' value='Cluster 2' />
+                <alias key='3' value='Cluster 3' />
+                <alias key='4' value='Cluster 4' />
+                <alias key='5' value='Cluster 5' />
+                <alias key='6' value='Cluster 6' />
+                <alias key='7' value='Cluster 7' />
+                <alias key='8' value='Cluster 8' />
+                <alias key='9' value='Cluster 9' />
+                <alias key='10' value='Cluster 10' />
+                <alias key='11' value='Cluster 11' />
+                <alias key='12' value='Cluster 12' />
+                <alias key='13' value='Cluster 13' />
+                <alias key='14' value='Cluster 14' />
+                <alias key='15' value='Cluster 15' />
+                <alias key='16' value='Cluster 16' />
+                <alias key='17' value='Cluster 17' />
+                <alias key='18' value='Cluster 18' />
+                <alias key='19' value='Cluster 19' />
+                <alias key='20' value='Cluster 20' />
+                <alias key='21' value='Cluster 21' />
+                <alias key='22' value='Cluster 22' />
+                <alias key='23' value='Cluster 23' />
+                <alias key='24' value='Cluster 24' />
+                <alias key='25' value='Cluster 25' />
+                <alias key='26' value='Cluster 26' />
+                <alias key='27' value='Cluster 27' />
+                <alias key='28' value='Cluster 28' />
+                <alias key='29' value='Cluster 29' />
+                <alias key='30' value='Cluster 30' />
+                <alias key='31' value='Cluster 31' />
+                <alias key='32' value='Cluster 32' />
+                <alias key='33' value='Cluster 33' />
+                <alias key='34' value='Cluster 34' />
+                <alias key='35' value='Cluster 35' />
+                <alias key='36' value='Cluster 36' />
+                <alias key='37' value='Cluster 37' />
+                <alias key='38' value='Cluster 38' />
+                <alias key='39' value='Cluster 39' />
+                <alias key='40' value='Cluster 40' />
+                <alias key='41' value='Cluster 41' />
+                <alias key='42' value='Cluster 42' />
+                <alias key='43' value='Cluster 43' />
+                <alias key='44' value='Cluster 44' />
+                <alias key='45' value='Cluster 45' />
+                <alias key='46' value='Cluster 46' />
+                <alias key='47' value='Cluster 47' />
+                <alias key='48' value='Cluster 48' />
+                <alias key='49' value='Cluster 49' />
+                <alias key='50' value='Cluster 50' />
+              </aliases>
+            </column>
+            <column caption='Calories Burned' datatype='real' name='[CALORIES_BURNED]' role='measure' type='quantitative' />
+            <column caption='Total Steps' datatype='real' name='[TOTAL_STEPS]' role='measure' type='quantitative' />
+            <column caption='Veryactive Minutes' datatype='real' name='[VERYACTIVE_MINUTES]' role='measure' type='quantitative' />
+            <column-instance column='[AdhocCluster:1]' derivation='None' is-adhoc-cluster='true' name='[none:AdhocCluster:1:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[TOTAL_STEPS]' derivation='None' name='[none:TOTAL_STEPS:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[CALORIES_BURNED]' derivation='Sum' name='[sum:CALORIES_BURNED:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TOTAL_STEPS]' derivation='Sum' name='[sum:TOTAL_STEPS:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[VERYACTIVE_MINUTES]' derivation='Sum' name='[sum:VERYACTIVE_MINUTES:qk]' pivot='key' type='quantitative' />
+            <style>
+              <style-rule element='mark'>
+                <encoding attr='color' field='[none:AdhocCluster:1:ok]' type='palette'>
+                  <map to='#4e79a7'>
+                    <bucket>1</bucket>
+                  </map>
+                  <map to='#e15759'>
+                    <bucket>0</bucket>
+                  </map>
+                  <map to='#f28e2b'>
+                    <bucket>2</bucket>
+                  </map>
+                </encoding>
+              </style-rule>
+            </style>
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:TOTAL_STEPS:qk]' included-values='in-range'>
+            <min>1000.0</min>
+            <max>36019.0</max>
+          </filter>
+          <slices>
+            <column>[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:TOTAL_STEPS:qk]</column>
+          </slices>
+          <aggregation value='false' />
+        </view>
+        <style>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:1:ok]' value='Total Steps vs Calories Burned'>
+              <formatted-text>
+                <run>Total Steps vs Calories Burned</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:1:ok]' />
+              <tooltip column='[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:VERYACTIVE_MINUTES:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:CALORIES_BURNED:qk]</rows>
+        <cols>[federated.0kuluxs0kd0fg010km8a112b4c5y].[sum:TOTAL_STEPS:qk]</cols>
+      </table>
+      <simple-id uuid='{F4C14A9A-8AEB-41FB-9ECF-E4B3514CADD5}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='DB 1: Daily Sleep and Activity'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#e15759'>Daily Sleep and Activity</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#e2e6f0' />
+        </style-rule>
+        <style-rule element='dash-title'>
+          <format attr='background-color' value='#ddebf0' />
+          <format attr='border-color' value='#555555' />
+          <format attr='border-width' value='0' />
+          <format attr='border-style' value='none' />
+        </style-rule>
+      </style>
+      <size maxheight='768' maxwidth='1366' minheight='768' minwidth='1366' preset-index='0' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97916' id='14' param='vert' type-v2='layout-flow' w='98828' x='586' y='1042'>
+            <zone fixed-size='40' h='6250' id='15' is-fixed='true' type-v2='title' w='98828' x='586' y='1042'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='91666' id='7' param='horz' type-v2='layout-flow' w='98828' x='586' y='7292'>
+              <zone h='91666' id='5' type-v2='layout-basic' w='85724' x='586' y='7292'>
+                <zone h='91666' id='3' name='Avg Active Hrs and Sleep Hrs per Day' w='42862' x='43448' y='7292'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='91666' id='50' name='Total Distance vs Calories Burned' w='42862' x='586' y='7292'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone fixed-size='179' h='91666' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='13104' x='86310' y='7292'>
+                <zone h='6120' id='8' name='Avg Active Hrs and Sleep Hrs per Day' pane-specification-id='2' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]' type-v2='color' w='13104' x='86310' y='7292'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='8724' id='9' name='Avg Active Hrs and Sleep Hrs per Day' pane-specification-id='1' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:Calculation_448389656770265089:qk]' type-v2='color' w='13104' x='86310' y='13412'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='8724' id='51' name='Total Distance vs Calories Burned' pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:6:ok]' type-v2='color' w='13104' x='86310' y='22136'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run bold='true' fontcolor='#e15759'>Daily Sleep and Activity</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='850' minheight='850' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='85' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97916' id='84' param='vert' type-v2='layout-flow' w='98828' x='586' y='1042'>
+                <zone fixed-size='40' h='6250' id='15' type-v2='title' w='98828' x='586' y='1042'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='91666' id='50' is-fixed='true' name='Total Distance vs Calories Burned' w='42862' x='586' y='7292'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8724' id='51' name='Total Distance vs Calories Burned' pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:6:ok]' type-v2='color' w='13104' x='86310' y='22136'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='91666' id='3' is-fixed='true' name='Avg Active Hrs and Sleep Hrs per Day' w='42862' x='43448' y='7292'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='6120' id='8' name='Avg Active Hrs and Sleep Hrs per Day' pane-specification-id='2' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]' type-v2='color' w='13104' x='86310' y='7292'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8724' id='9' name='Avg Active Hrs and Sleep Hrs per Day' pane-specification-id='1' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:Calculation_448389656770265089:qk]' type-v2='color' w='13104' x='86310' y='13412'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{173EE364-DF53-430F-95E1-A7984CE52511}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='DB 2: Daily Sleep Analysis'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#e15759'>Daily Sleep Analysis</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#e2e6f0' />
+        </style-rule>
+        <style-rule element='dash-title'>
+          <format attr='background-color' value='#ddebf0' />
+        </style-rule>
+      </style>
+      <size maxheight='768' maxwidth='1366' minheight='768' minwidth='1366' preset-index='0' sizing-mode='fixed' />
+      <datasources>
+        <datasource name='Parameters' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Minimum Required Sleep for Adults in Minutes' datatype='real' default-format='n#,##0&quot; Minutes&quot;;-#,##0&quot; Minutes&quot;' name='[Parameter 1]' param-domain-type='any' role='measure' type='quantitative' value='420.'>
+          <calculation class='tableau' formula='420.' />
+        </column>
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97916' id='19' param='vert' type-v2='layout-flow' w='98828' x='586' y='1042'>
+            <zone fixed-size='40' h='6250' id='20' is-fixed='true' type-v2='title' w='98828' x='586' y='1042'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='91666' id='7' param='horz' type-v2='layout-flow' w='98828' x='586' y='7292'>
+              <zone h='91666' id='5' type-v2='layout-basic' w='83015' x='586' y='7292'>
+                <zone h='45832' id='9' name='Time in Bed vs Time Asleep' w='83015' x='586' y='7292'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='45834' id='11' name='Total Distance vs Sleep Analysis' w='41506' x='586' y='53124'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='45834' id='13' name='Total Calories Burned vs Sleep Analysis' w='41509' x='42092' y='53124'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone fixed-size='216' h='91666' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='15813' x='83601' y='7292'>
+                <zone h='16537' id='10' name='Time in Bed vs Time Asleep' pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:2:ok]' type-v2='color' w='15813' x='83601' y='7292'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='16537' id='12' name='Total Distance vs Sleep Analysis' pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:3:ok]' type-v2='color' w='15813' x='83601' y='23829'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='11328' id='14' name='Total Calories Burned vs Sleep Analysis' pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:4:ok]' type-v2='color' w='15813' x='83601' y='40366'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='6901' id='15' mode='type_in' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='15813' x='83601' y='51694'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run bold='true' fontcolor='#e15759'>Daily Sleep Analysis</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1250' minheight='1250' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='86' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97916' id='85' param='vert' type-v2='layout-flow' w='98828' x='586' y='1042'>
+                <zone fixed-size='40' h='6250' id='20' type-v2='title' w='98828' x='586' y='1042'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='45832' id='9' is-fixed='true' name='Time in Bed vs Time Asleep' w='83015' x='586' y='7292'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='16537' id='10' name='Time in Bed vs Time Asleep' pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:2:ok]' type-v2='color' w='15813' x='83601' y='7292'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='6901' id='15' mode='type_in' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='15813' x='83601' y='51694'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='45834' id='11' is-fixed='true' name='Total Distance vs Sleep Analysis' w='41506' x='586' y='53124'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='16537' id='12' name='Total Distance vs Sleep Analysis' pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:3:ok]' type-v2='color' w='15813' x='83601' y='23829'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='45834' id='13' is-fixed='true' name='Total Calories Burned vs Sleep Analysis' w='41509' x='42092' y='53124'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='11328' id='14' name='Total Calories Burned vs Sleep Analysis' pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:4:ok]' type-v2='color' w='15813' x='83601' y='40366'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{8CC5D06A-8A84-43C8-8BCC-CBECC7B2CFA2}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='DB 3: Weekly Activity'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#e15759'>Weekly Activity</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#e2e6f0' />
+        </style-rule>
+        <style-rule element='dash-title'>
+          <format attr='background-color' value='#ddebf0' />
+        </style-rule>
+      </style>
+      <size maxheight='768' maxwidth='1366' minheight='768' minwidth='1366' preset-index='0' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97916' id='22' param='vert' type-v2='layout-flow' w='98828' x='586' y='1042'>
+            <zone fixed-size='40' h='6250' id='23' is-fixed='true' type-v2='title' w='98828' x='586' y='1042'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='91666' id='7' param='horz' type-v2='layout-flow' w='98828' x='586' y='7292'>
+              <zone h='91666' id='5' type-v2='layout-basic' w='87115' x='586' y='7292'>
+                <zone h='56689' id='3' name='Daily Activity Split in Minutes' w='87115' x='586' y='42269'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='34977' id='9' name='Active Days by Calories Burned' w='43559' x='44142' y='7292'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='34977' id='11' name='Active Days by Distance' w='43556' x='586' y='7292'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone fixed-size='160' h='91666' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='11713' x='87701' y='7292'>
+                <zone h='11328' id='8' name='Daily Activity Split in Minutes' pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]' type-v2='color' w='11713' x='87701' y='7292'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='8724' id='10' name='Active Days by Calories Burned' pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:CALORIES_BURNED:qk]' type-v2='color' w='11713' x='87701' y='18620'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='8724' id='12' name='Active Days by Distance' pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:TOTAL_DISTANCE_KILOMETER:qk]' type-v2='color' w='11713' x='87701' y='27344'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run bold='true' fontcolor='#e15759'>Weekly Activity</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1100' minheight='1100' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='49' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97916' id='48' param='vert' type-v2='layout-flow' w='98828' x='586' y='1042'>
+                <zone fixed-size='40' h='6250' id='23' type-v2='title' w='98828' x='586' y='1042'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='261' h='34977' id='11' is-fixed='true' name='Active Days by Distance' w='43556' x='586' y='7292'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8724' id='12' name='Active Days by Distance' pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:TOTAL_DISTANCE_KILOMETER:qk]' type-v2='color' w='11713' x='87701' y='27344'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='261' h='34977' id='9' is-fixed='true' name='Active Days by Calories Burned' w='43559' x='44142' y='7292'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8724' id='10' name='Active Days by Calories Burned' pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:CALORIES_BURNED:qk]' type-v2='color' w='11713' x='87701' y='18620'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='56689' id='3' is-fixed='true' name='Daily Activity Split in Minutes' w='87115' x='586' y='42269'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='11328' id='8' name='Daily Activity Split in Minutes' pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]' type-v2='color' w='11713' x='87701' y='7292'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{E2387A96-220C-4212-93D0-0AA700A97C44}' />
+    </dashboard>
+    <dashboard name='Story' type='storyboard'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Bellabeat Case Study: Fitness Tracker Data Analysis</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#f3ebf3' />
+        </style-rule>
+        <style-rule element='story-point-caption'>
+          <format attr='background-color' value='#b07aa1' />
+          <format attr='font-weight' value='bold' />
+          <format attr='color' value='#333333' />
+        </style-rule>
+        <style-rule element='story-title'>
+          <format attr='border-width' value='0' />
+          <format attr='border-style' value='none' />
+          <format attr='font-family' value='Lucida Calligraphy' />
+          <format attr='font-weight' value='bold' />
+          <format attr='font-style' value='normal' />
+          <format attr='color' value='#499894' />
+        </style-rule>
+      </style>
+      <size maxheight='968' maxwidth='1366' minheight='968' minwidth='1366' preset-index='0' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98348' id='1' param='vert' removable='false' type-v2='layout-flow' w='98828' x='586' y='826'>
+            <zone h='3512' id='3' type-v2='title' w='98828' x='586' y='826' />
+            <zone h='10434' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='98828' x='586' y='4338' />
+            <zone h='84402' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='98828' x='586' y='14772'>
+              <flipboard active-id='3' nav-type='caption' show-nav-arrows='true'>
+                <story-points>
+                  <story-point caption='Activity Analysis' captured-sheet='DB 3: Weekly Activity' id='3'>
+                    <capturedDeltas>
+                      <worksheet name='Daily Activity Split in Minutes'>
+                        <style delta-type='added'>
+                          <style-rule element='axis'>
+                            <encoding attr='space' class='0' field='[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]' field-type='quantitative' max='226.33763260748188' min='0.0' range-type='fixed' scope='rows' type='space' />
+                          </style-rule>
+                        </style>
+                        <selection-collection>
+                          <node-selection select-tuples='false'>
+                            <oriented-node-reference orientation='vertical'>
+                              <node-reference>
+                                <axis>[federated.0kuluxs0kd0fg010km8a112b4c5y].[Multiple Values]</axis>
+                              </node-reference>
+                              <page-reference />
+                            </oriented-node-reference>
+                          </node-selection>
+                        </selection-collection>
+                      </worksheet>
+                    </capturedDeltas>
+                  </story-point>
+                  <story-point caption='Sleep and Activity Correlation' captured-sheet='DB 1: Daily Sleep and Activity' id='1' />
+                  <story-point caption='Sleep Analysis' captured-sheet='DB 2: Daily Sleep Analysis' id='2' />
+                </story-points>
+              </flipboard>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <simple-id uuid='{9CDE5434-B0A1-4AF5-AF51-05DA535A03BD}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='32'>
+    <window class='worksheet' name='Avg Active Hrs and Sleep Hrs per Day'>
+      <cards>
+        <edge name='left'>
+          <strip size='157'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='28'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='157'>
+            <card pane-specification-id='2' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]' type='color' />
+            <card pane-specification-id='1' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:Calculation_448389656770265089:qk]' type='color' />
+            <card mode='type_in' param='[Parameters].[Parameter 2]' type='parameter' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='90'>
+            <card type='caption' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{642C31FC-2B75-413C-8E01-CEEC07C4CC32}' />
+    </window>
+    <window class='worksheet' name='Daily Activity Split in Minutes'>
+      <cards>
+        <edge name='left'>
+          <strip size='157'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='28'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='157'>
+            <card pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='90'>
+            <card type='caption' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7488E0C9-F58C-4076-8BDF-D5A394E0BD37}' />
+    </window>
+    <window class='worksheet' name='Time in Bed vs Time Asleep'>
+      <cards>
+        <edge name='left'>
+          <strip size='157'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='28'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='157'>
+            <card pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:2:ok]' type='color' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='88'>
+            <card type='caption' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F34B947A-2321-4FB3-9766-9349BE5C8305}' />
+    </window>
+    <window class='worksheet' name='Total Distance vs Sleep Analysis'>
+      <cards>
+        <edge name='left'>
+          <strip size='157'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='28'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='157'>
+            <card pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:3:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{BBC7356F-BE26-4F14-9A09-D01618AF73C5}' />
+    </window>
+    <window class='worksheet' name='Total Calories Burned vs Sleep Analysis'>
+      <cards>
+        <edge name='left'>
+          <strip size='157'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='28'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='157'>
+            <card mode='type_in' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:4:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{93621B71-37A4-4275-A218-80D567C4578A}' />
+    </window>
+    <window class='worksheet' name='Daily Stats'>
+      <cards>
+        <edge name='left'>
+          <strip size='157'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='28'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{A634BAC4-4720-4769-958C-2E89CBCE8145}' />
+    </window>
+    <window class='worksheet' name='Total Steps vs Calories Burned'>
+      <cards>
+        <edge name='left'>
+          <strip size='157'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='28'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='157'>
+            <card pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:1:ok]' type='color' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='90'>
+            <card type='caption' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{868117D1-B8E8-43A4-9E17-12AE8A43728C}' />
+    </window>
+    <window class='dashboard' name='DB 1: Daily Sleep and Activity'>
+      <viewpoints>
+        <viewpoint name='Avg Active Hrs and Sleep Hrs per Day'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Total Distance vs Calories Burned'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='15' />
+      <simple-id uuid='{27111149-47D3-400F-84C0-39A70F3EAF44}' />
+    </window>
+    <window class='dashboard' name='DB 2: Daily Sleep Analysis'>
+      <viewpoints>
+        <viewpoint name='Time in Bed vs Time Asleep'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Total Calories Burned vs Sleep Analysis'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Total Distance vs Sleep Analysis'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='20' />
+      <simple-id uuid='{9D808276-4C98-4A84-A278-A61AFC29418B}' />
+    </window>
+    <window class='dashboard' name='DB 3: Weekly Activity'>
+      <viewpoints>
+        <viewpoint name='Active Days by Calories Burned'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Active Days by Distance'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Daily Activity Split in Minutes'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{095DB182-49AB-4A06-B38C-3CC4781618B6}' />
+    </window>
+    <window class='worksheet' name='Total Distance vs Calories Burned'>
+      <cards>
+        <edge name='left'>
+          <strip size='156'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='27'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='89'>
+            <card type='caption' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='158'>
+            <card pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[none:AdhocCluster:6:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5EF6729A-049D-4DA1-AF70-61BD3ECC0EDA}' />
+    </window>
+    <window class='worksheet' name='Active Days by Calories Burned'>
+      <cards>
+        <edge name='left'>
+          <strip size='158'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='29'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='159'>
+            <card pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:CALORIES_BURNED:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{47B4F188-036A-4FC0-B177-BA4D2696212D}' />
+    </window>
+    <window class='worksheet' name='Active Days by Distance'>
+      <cards>
+        <edge name='left'>
+          <strip size='157'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='28'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='159'>
+            <card pane-specification-id='0' param='[federated.0kuluxs0kd0fg010km8a112b4c5y].[avg:TOTAL_DISTANCE_KILOMETER:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{9E67B9A2-EFA1-4B7B-8BC4-46BBB0E3E0C1}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Story'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{B51D8F77-6EC2-4614-A191-64CBE199F506}' />
+    </window>
+  </windows>
+</workbook>

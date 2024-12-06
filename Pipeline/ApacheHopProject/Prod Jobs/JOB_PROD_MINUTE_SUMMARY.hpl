@@ -66,7 +66,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>STG_NARROW_MERGED</from>
+      <from>STG_MINUTESTEPSNARROW_MERGED</from>
       <to>Sort MINUTESTEPS</to>
       <enabled>Y</enabled>
     </hop>
@@ -427,7 +427,7 @@ FROM FITNESS_DATA.STG_MINUTESLEEP_MERGED
     </GUI>
   </transform>
   <transform>
-    <name>STG_NARROW_MERGED</name>
+    <name>STG_MINUTESTEPSNARROW_MERGED</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
